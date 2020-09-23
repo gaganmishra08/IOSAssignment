@@ -23,8 +23,6 @@ class DashboardVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 self.tableView.reloadData()
             }
         }
-       
-       
     }
 //MARK:- Pull to refresh
     @objc func refresh(_ sender: AnyObject) {
