@@ -6,13 +6,21 @@
 //
 
 import Foundation
-struct JsonResponse:Codable{
-    let title:String?
-    let rows :[JsonObjects]?
-  
+
+// MARK: - Welcome
+struct JsonResponse: Codable {
+    let title: String
+    let rows: [JsonObjects]
 }
-struct JsonObjects:Codable{
-    let title:String?
-    let description:String?
-    let imageHref:String
+
+// MARK: - Row
+struct JsonObjects: Codable {
+    let title, rowDescription: String?
+    let imageHref: String?
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case rowDescription = "description"
+        case imageHref
+    }
 }
